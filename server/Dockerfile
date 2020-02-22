@@ -1,7 +1,6 @@
 FROM node:latest
-RUN npm install -g json-server
-WORKDIR /data
-VOLUME /data
-COPY db.json /data
-EXPOSE 80
-CMD ["json-server","/data/db.json"]
+RUN npm install -g express
+WORKDIR /server
+COPY . /server
+EXPOSE 3000
+CMD ["npm","start"]
